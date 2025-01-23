@@ -51,6 +51,16 @@ function addition(a, b) {
     if (n <= 0) throw new Error('Le nombre doit être positif');
     return Array.from({ length: n }, (_, i) => i * i);
   }
+
+  // Fonction qui ajoute 10% de tax
+  function calculateTax(price) { return price * 0.1; };
+
+  // Fonction qui calcul un prix
+  function calculateTotal(price, quantity) {
+    const total = price * quantity
+    return total + calculateTax(total)
+  };
+  
   
   module.exports = { 
     addition, 
@@ -62,6 +72,8 @@ function addition(a, b) {
     estPair, 
     sommeTableau, 
     filtrerSuperieurA10, 
-    premiersCarres 
+    premiersCarres,
+    calculateTax,
+    calculateTotal
   };
   
